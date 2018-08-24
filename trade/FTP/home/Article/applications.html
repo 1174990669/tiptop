@@ -1,0 +1,27 @@
+<include file="Public:header" />
+	<section class="sec_product">
+		<include file="Public:banner" />
+		<div class="container-fluid">
+			<div class="container">
+				<div class="row bottom_20">
+				  	<include file="Public:bread" />
+				  	<volist name="article_list" id="v">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-4 bottom_pad">
+					  	<a href="{$v.url}">
+							<img src="{$v.list_img}" alt="{$v.name}">
+							<p class="text-center">{$v.name}</p>
+					  	</a>
+					</div>
+					</volist>
+				</div>
+				<div class="row clearfix pad_top_20">
+                    <div class="col-md-12 column text-center">
+                        <ul class="pagination">
+                           {$pagelist}
+                        </ul>
+                    </div>
+                </div>
+			</div>
+		</div>
+	</section>
+<include file="Public:bottom" />

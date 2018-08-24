@@ -1,0 +1,18 @@
+        <div class="content-left">
+            <h4>{$top_column.name}</h4>
+             <if condition="$left_navi[0]['id'] neq ''"> 
+            <div class="content-left-top">
+                <ul>
+                <volist name="left_navi" id="v">
+                    <li><a href="{$v.url}" <if condition="$v['id'] eq $column_info['id']">class="current"</if>>{$v.name}</a></li>
+               </volist>
+                </ul>
+            </div>
+         </if>   
+            <div class="content-left-bot">
+                <h4 class="contact-title">联系我们 <i>CONTACT US</i></h4>
+                <ul>
+                    {:C('WEB_LEFY')}
+                </ul>
+            </div>
+        </div>

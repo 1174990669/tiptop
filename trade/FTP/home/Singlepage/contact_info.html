@@ -1,0 +1,33 @@
+<include file="Public:header" />
+    <section class="sec_product">
+        <include file="Public:banner" />
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">        
+                    <include file="Public:bread" />
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="div_p_text">
+                           {$info.content}
+                        </div>
+                        <div class="div_form text-center">
+                            <h3 class="h3_red">GET IN TOUCH WITH US</h3>
+                            <form class="form_role" role="search" action="{:U('Message/index')}" method="post">
+                                <div class="div_inp text-left">
+                                    <span>Name</span><input type="text" class="" placeholder="" name="name">
+                                </div>
+                                <div class="div_inp text-left">
+                                    <span>Phone</span><input type="text" class="" placeholder="" name="phone">
+                                </div>
+                                <div class="div_inp text-left">
+                                    <span>Email</span><input type="text" class="" placeholder="" name="email">
+                                </div>
+                                <textarea placeholder="Message content" name="content" id="" cols="30" rows="10"></textarea>
+                                <div class="text-right"><button class="button">Submit </button></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<include file="Public:bottom" />

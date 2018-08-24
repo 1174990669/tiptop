@@ -1,0 +1,129 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>原生JS购物车结算功能</title>
+    <script src="js/jquery-3.0.0.min.js"></script>
+
+<!-- <link rel="stylesheet" href="css/style.css"> -->
+<!-- <script type="text/javascript" src="js/demo.js"></script> -->
+
+<style>
+    @charset "utf-8";
+   .catbox{width:940px;margin:100px auto}
+   .catbox table{text-align:center;width:100%}
+    .catbox table th,.catbox table td{border:1px solid #cadeff}
+    .tbody_tr .count-input{width:40px;height: 24px;text-align: center;background: transparent;border:1px solid #333;}
+</style>
+</head>
+<body>
+    <div class="catbox">
+        <table id="cartTable">
+            <thead>
+                <tr>
+                    <th>
+                        <label> <input class="check-all check" type="checkbox">&nbsp;&nbsp;全选</label>
+                    </th>
+                    <th>商品</th>
+                    <th>单价</th>
+                    <th>数量</th>
+                    <th>小计</th>
+                </tr>
+            </thead>
+            <tbody class="tbody_tr">
+                <tr class="on">
+                    <td class="checkbox"><input class="check-one check" type="checkbox" ></td>
+                    <td class="goods"><img src="http://chuantu.biz/t6/356/1534123697x-1404817491.jpg" alt=""><span>Casio/卡西欧 EX-TR350</span></td>
+                    <td class="price">5999.88</td>
+                    <td class="count"><em class="reduce">-</em>
+                    <input class="count-input" type="text" value="1" disabled="disabled">
+                    <span class="add">+</span></td>
+                    <td class="subtotal">5999.88</td>
+                </tr>
+                <tr class="on">
+                    <td class="checkbox"><input class="check-one check" type="checkbox" ></td>
+                    <td class="goods"><img src="http://chuantu.biz/t6/356/1534123697x-1404817491.jpg" alt=""><span>Casio/卡西欧 EX-TR350</span></td>
+                    <td class="price">3888.50</td>
+                    <td class="count"><em class="reduce">-</em>
+                    <input class="count-input" type="text" value="1" disabled="disabled">
+                    <em class="add">+</em></td>
+                    <td class="subtotal">3888.50</td>
+                </tr>
+                <tr class="on">
+                    <td class="checkbox"><input class="check-one check" type="checkbox" ></td>
+                    <td class="goods"><img src="http://chuantu.biz/t6/356/1534123697x-1404817491.jpg" alt=""><span>Casio/卡西欧 EX-TR350</span></td>
+                    <td class="price">1428.50</td>
+                    <td class="count"><span class="reduce">-</span>
+                    <input class="count-input" type="text" value="1" disabled="disabled">
+                    <span class="add">+</span></td>
+                    <td class="subtotal">1428.50</td>
+                </tr>
+                <tr class="on">
+                    <td class="checkbox"><input class="check-one check" type="checkbox" ></td>
+                    <td class="goods"><img src="http://chuantu.biz/t6/356/1534123697x-1404817491.jpg" alt=""><span>Casio/卡西欧 EX-TR350</span></td>
+                    <td class="price">640.60</td>
+                    <td class="count"><span class="reduce">-</span>
+                    <input class="count-input" type="text" value="1" disabled="disabled">
+                    <span class="add">+</span></td>
+                    <td class="subtotal">640.60</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="foot" id="foot">
+            <div class="fr total">合计：￥<span id="priceTotal">11957.48</span></div>
+        </div>
+    </div>
+
+<script>
+    window.onload=function(){
+        if(!document.getElementsByClassName){
+            document.getElementsByClassName=function(cls){var ret=[];var els=document.getElementsByTagName('*');for(var i=0,len=els.length;i<len;i++){if(els[i].className.indexOf(cls+' ')>=0||els[i].className.indexOf(' '+cls+' ')>=0||els[i].className.indexOf(' '+cls)>=0){ret.push(els[i]);}}
+            return ret;
+        }}
+
+    var table=document.getElementById('cartTable');
+    var selectInputs=document.getElementsByClassName('check');
+    var checkAllInputs=document.getElementsByClassName('check-all')
+    var tr=table.children[1].rows;
+
+    var priceTotal=document.getElementById('priceTotal');
+    var foot=document.getElementById('foot');
+    function getTotal(){
+        var seleted=0;
+        var price=0;
+        var HTMLstr='';
+        for(var i=0,len=tr.length;i<len;i++){
+            if(tr[i].getElementsByTagName('input')[0].checked){
+                tr[i].className='on';seleted+=parseInt(tr[i].getElementsByTagName('input')[1].value);
+                price+=parseFloat(tr[i].cells[4].innerHTML);
+                HTMLstr+='<div><img src="'+tr[i].getElementsByTagName('img')[0].src+'"><span class="del" index="'+i+'"></span></div>'
+            }
+            else{tr[i].className='';
+        }}
+            priceTotal.innerHTML=price.toFixed(2);
+                // console.log(priceTotal.innerHTML)
+            if(seleted==0){foot.className='foot';
+    }}
+
+    function getSubtotal(tr){
+        var cells=tr.cells;
+        var price=cells[2];
+        var subtotal=cells[4];
+        var countInput=tr.getElementsByTagName('input')[1];
+        var span=tr.getElementsByTagName('span')[1];
+        subtotal.innerHTML=(parseInt(countInput.value)*parseFloat(price.innerHTML)).toFixed(2);
+        if(countInput.value==1){span.innerHTML='';}else{span.innerHTML='-';
+    }}
+    for(var i=0;i<selectInputs.length;i++){selectInputs[i].onclick=function(){if(this.className.indexOf('check-all')>=0){for(var j=0;j<selectInputs.length;j++){selectInputs[j].checked=this.checked;}}
+    if(!this.checked){for(var i=0;i<checkAllInputs.length;i++){checkAllInputs[i].checked=false;}}
+getTotal();}}
+    for(var i=0;i<tr.length;i++){tr[i].onclick=function(e){var e=e||window.event;var el=e.target||e.srcElement;var cls=el.className;var countInout=this.getElementsByTagName('input')[1];var value=parseInt(countInout.value);switch(cls){case 'add':countInout.value=value+1;getSubtotal(this);break;case 'reduce':if(value>1){countInout.value=value-1;getSubtotal(this);}
+break;case 'delete':if(conf){this.parentNode.removeChild(this);}
+break;}
+getTotal();}
+tr[i].getElementsByTagName('input')[1].onkeyup=function(){var val=parseInt(this.value);if(isNaN(val)||val<=0){val=1;}
+if(this.value!=val){this.value=val;}
+getSubtotal(this.parentNode.parentNode);getTotal();}}
+checkAllInputs[0].checked=true;checkAllInputs[0].onclick();
+}
+
+</script>
+</body></html>

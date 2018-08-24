@@ -1,0 +1,14 @@
+<div class="col-xs-12 col-sm-12 col-md-12 pad_top">
+                   <if condition="$left_navi">
+                        <volist name="left_navi" id="v">
+                        <span class="span_padd"><a class="a_color <if condition='$column_info[id] eq $v[id]'> abcd</if>" href="{$v.url}">{$v.name}</a></span> 
+                      </volist>
+                      <else />
+                      <span class="span_padd"><a class="a_color  abcd" href="{$top_column.url}.html">{$top_column.name}</a></span> 
+                      </if>
+                        <p class="pull-right"><img class="img_home" src="__STYLE__/home/images/product/home.jpg" alt="#">&nbsp;&nbsp;<a href="/">Home</a>
+                        <volist name="bread_list" id="v">
+                        &nbsp; - &nbsp;<a href="{$v.url}">{$v.name}</a>
+                        </volist>
+                        </p>
+                    </div>

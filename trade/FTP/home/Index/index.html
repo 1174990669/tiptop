@@ -1,0 +1,144 @@
+<include file="Public:header" />
+    <section class="sec_ind">
+        <div id="swiper1" class="swiper-container swi_img swiper-container-horizontal">
+            <div class="swiper-wrapper" style="transform: translate3d(-2580px, 0px, 0px); transition-duration: 0ms;">
+
+            
+       
+ <volist name="banner_list" id="v">
+            <div class="swiper-slide swiper-slide-active back_img" data-swiper-slide-index="{$i}" style="width: 1290px;background: url({$v.src_img});">
+            <a class="a_block" href="{$v.url}">LEARN MORE &nbsp;&nbsp;→</a>
+            </div>
+</volist>
+                
+            </div>
+            <div id="pagination1" class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
+            <volist name="banner_list" id="v">
+                <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide {$i}"></span>
+                </volist>
+                 
+            </div>
+            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+            
+        </div>
+        <div class="container-fluid back_col">
+            <div class="container">
+                <h3 class="H3">PRODUCTS</h3>
+                <div class="row pad_20">
+                    <div class="col-xs-12 col-sm-12 col-md-12 pad_bottom">
+                        <ul class="Ul_img">
+                        <volist name="prodct_class" id="v">
+                            <li><a href="{$v.url}"><img src="{$v.home_img}" alt="{$v.name}"></a><span> {$v.name} </span></li>
+                        </volist>
+                        </ul>
+                    </div>
+                    <p class="p_a"><a class="a_blo" href="/products.html">LEARN MORE &nbsp;&nbsp;→</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid fluid_div">
+            <div class="row">
+                <div class="col-xs-6 col-sm-12 col-md-12 col-lg-6 col_pad_0">
+                    <img class="col_6_img" src="{$about.home_img}" alt="#">
+                </div>
+                <div class="col-xs-6 col-sm-12 col-md-12 col-lg-6 d_url">
+                    {$about.sub_content}
+                    <a class="a_href" href="/company-introduction.html">LEARN MORE &nbsp;&nbsp;→</a>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row div_col_4">
+                    <h3 class="H3">NEWS</h3>
+                    <volist name="tonggao_list" id="v">
+                    <div class="col-xs-4 col-sm-4 col-md-4 hover_box">
+                        <a href="{$v.url}">
+                            <div>
+                                <img class="col_4_img" src="{$v.list_img}" alt="{$v.name}">
+                            </div>
+                            <div class="div_color">
+                                <b>{$v.name}</b>
+                                <p>{$v.sub_content}</p>
+                            </div>
+                        </a>
+                    </div>
+                    </volist>
+                </div>
+                <p class="col_p_a"><a href="/news.html">LEARN MORE &nbsp;&nbsp;→</a></p>
+            </div>
+        </div>
+        <div class="container-fluid bck_f5">
+            <div class="container">
+                <h3 class="H3">WHY US</h3>
+                <div class="rew div_link">
+                    <div class="col-xs-4 col-sm-6 col-md-6 col-lg-4 he_110">
+                        <div class="div_f5"><img src="__STYLE__/home/images/icon/icon_img1.jpg" alt="#"></div>
+                        <div class="div_f5">
+                            <h5>Great support</h5>
+                            <p>Technical support and file downloads，Instruction Manuals & User’s Manual，and  Repair Service</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-4 col-sm-6 col-md-6 col-lg-4 he_110">
+                        <div class="div_f5"><img src="__STYLE__/home/images/icon/icon_img2.png" alt="#"></div>
+                        <div class="div_f5">
+                            <h5>Large inventory</h5>
+                            <p>Warehouse powerhouse,Our Stock in China and shenzhen</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-4 col-sm-6 col-md-6 col-lg-4 he_110">
+                        <div class="div_f5"><img src="__STYLE__/home/images/icon/icon_img3.png" alt="#"></div>
+                        <div class="div_f5">
+                            <h5>Certified experience</h5>
+                            <p>We sell and buy factory automationfrom all original brand factory</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-4 col-sm-6 col-md-6 col-lg-4 he_110">
+                        <div class="div_f5"><img src="__STYLE__/home/images/icon/icon_img4.jpg" alt="#"></div>
+                        <div class="div_f5">
+                            <h5>Competitive pricing</h5>
+                            <p>Tiptop have big Stock and Best price</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-4 col-sm-6 col-md-6 col-lg-4 he_110">
+                        <div class="div_f5"><img src="__STYLE__/home/images/icon/icon_img5.png" alt="#"></div>
+                        <div class="div_f5">
+                            <h5>Perfect warranty</h5>
+                            <p>All parts new or reconditioned are covered by AoteWell 12 month warranty</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-4 col-sm-6 col-md-6 col-lg-4 he_110">
+                        <div class="div_f5"><img src="__STYLE__/home/images/icon/icon_img6.png" alt="#"></div>
+                        <div class="div_f5">
+                            <h5>14 years experience</h5>
+                            <p>Tiptop Composites Co., Ltd.  was established in 2004</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid b_url">
+            <div class="container">
+                <form id="form2" class="navbar-form navbar-left" role="search" action="{:U('Product/search')}" method="post">
+                    <p>Enter product name</p>
+                    <div class="form-group">
+                        <input type="text" class="form-control input_control" placeholder="Please enter a keyword" name="keywords">
+                    </div> 
+                    <button type="submit" class="btn btn_default">→</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        var swiper = new Swiper('#swiper1', {
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+        });
+    </script>
+<include file="Public:bottom" />

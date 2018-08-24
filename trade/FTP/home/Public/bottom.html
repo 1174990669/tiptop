@@ -1,0 +1,29 @@
+    <footer>
+        <div class="container">
+            <div class="row row_border">
+            <volist name="bottom_navi" id="v">
+                <div class="col-xs-3 col-sm-3 col-md-3 a_block">
+                    <h4 class="h4_16">{$v.name}</h4>
+                    <volist name="v.foot" id="vo">
+                    <a href="{$vo.url}">{$vo.name}</a>
+                    </volist>
+                </div>
+            </volist>
+                <div class="col-xs-3 col-sm-3 col-md-3 a_line" style="color: #828282;line-height: 40px;">
+                    <h4>Contact Us</h4>
+                    {:C('WEB_CONTACT')}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 col-sm-8 col-md-8 text text_left">{:C('WEB_ICP')} </div>
+                <!-- <div class="col-xs-4 col-sm-4 col-md-4 text text_right">
+                    <a href="#">Follow Us&nbsp;&nbsp;&nbsp;</a>
+                    <a href="#"><img src="__STYLE__/home/images/icon/icon_fen.jpg" alt="#"></a>
+                    <a href="#"><img src="__STYLE__/home/images/icon/icon_zha.jpg" alt="#"></a>
+                    <a href="#"><img src="__STYLE__/home/images/icon/icon_ren.jpg" alt="#"></a>
+                </div> -->
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

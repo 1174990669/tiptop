@@ -1,0 +1,43 @@
+<include file="Public:header" />
+<include file="Public:banner" />
+<div class="nymbx maxwin">
+    <div class="win nymbx-pl">
+        <include file="Public:bread" />
+    </div>
+</div>
+<div class="  win prisasdsa" id=" ">
+    <ul class="clearfix videoul">
+    <volist name="article_list" id="v">
+        <li class="videoulli" data-src="{$v.content}">
+            <img src="{$v.list_img}" class="videoulliimg" alt="">
+            <div class="videoulplay">
+                <img src="__STYLE__/home/images/dsfgsd.png" class="playbtn" alt="">
+            </div>
+            <div class="videotext overtext">{$v.name}</div>
+        </li>
+   </volist>
+    </ul>
+
+    <div class="page">
+    {$pagelist}
+    </div>
+</div>
+
+<div class="videoplay"  >
+    <div class="videoplaydiv">
+        <img src="__STYLE__/home/images/close.png" id="close" alt="">
+        <embed src="" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" class="videobg">
+    </div>
+</div>
+ 
+<script>
+    $(".videoulli").click(function () {
+        $(".videobg").attr("src",$(this).attr("data-src"))
+        $(".videoplay").show();
+    })
+    $("#close").click(function () {
+        $(".videoplay").hide();
+        $(".videobg").attr("src","")
+    })
+</script>
+<include file="Public:bottom" />

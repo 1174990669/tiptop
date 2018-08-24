@@ -1,0 +1,36 @@
+<include file="Public:header" />
+	<section class="sec_product">
+		<include file="Public:banner" />
+		<div class="container-fluid">
+			<div class="container">
+				<div class="row">        
+				  	<include file="Public:bread" />
+					<div id="news" class="col-xs-12 col-sm-12 col-md-12">
+						<div class="div_border">
+							<div class="text-center pad_20">
+								<h3>{$info.name}</h3>
+								<div>
+									<p class="p_top"> <span> {$info.create_time}</span> 
+										<div class="bshare-custom" style="float: right;margin-top: -80px;"><div class="bsPromo bsPromo2"></div>
+                            Share: 
+                                <a title="分享到LinkedIn" class="bshare-linkedin" href="javascript:void(0);"></a>
+                                <a title="分享到Twitter" class="bshare-twitter" href="javascript:void(0);"></a>
+                                <a title="分享到Pinterest" class="bshare-pinterest" href="javascript:void(0);"></a>
+                                <a title="分享到Facebook" class="bshare-facebook" href="javascript:void(0);"></a>
+                              
+                                </div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+									</p>
+									
+								</div>
+							</div>
+							<div class="div_p_cen">
+								{$info.content}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+<include file="Public:bottom" />

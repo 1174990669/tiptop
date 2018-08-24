@@ -1,0 +1,44 @@
+<include file="Public:header" />
+    <section class="sec_product">
+       <include file="Public:banner" />
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <ul class="Ul_img">
+                        <volist name="left_navi" id="v">
+                            <li><a <if condition="$column_info['id'] eq $v['id']">class="act"</if> href="{$v.url}">{$v.name}</a></li>
+                        </volist>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <ul class="ul_product">
+                    <volist name="product_list" id="v">
+                        <li class="li_imgs">
+                            <a href="{$v.url}">
+                                <img class="img-responsive images" src="{$v.list_img}" alt="{$v.name}">
+                                <p class="text_p">{$v.name}</p>
+                            </a>
+                        </li>
+                    </volist>
+
+
+                    </ul>
+                </div>
+                    <div class="row clearfix">
+                    <div class="col-md-12 column text-center">
+                        <ul class="pagination">
+                            {$pagelist}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+<include file="Public:bottom" />

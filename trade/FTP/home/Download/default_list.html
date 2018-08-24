@@ -1,0 +1,37 @@
+<include file="Public:header" />
+    <section class="sec_product">
+        <include file="Public:banner" />
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row bottom_20">        
+                    <include file="Public:bread" />
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 ol_ul">
+                        <ol>
+                            <li>file name </li>
+                            <li>size </li>
+                            <li>operation </li>
+                        </ol>
+                         <volist name="product_list" id="v">
+                        <ul>
+                            <li>{$v.name}</li>
+                            <li>{$v.size}</li>
+                            <li><a href="{$v.file1}"><img src="__STYLE__/home/images/icon/xiaz.jpg" alt="#"></a>Downloads</li>
+                        </ul>
+
+                        </volist>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-md-12 column text-center">
+                        <ul class="pagination">
+                           
+                            {$pagelist}
+                        </ul>
+                    </div>
+                </div>
+                <!-- <p class="text-center"><a class="a_block" href="#">LEARN MORE &nbsp;&nbsp; →</a></p> -->
+            </div>
+        </div>
+    </section>
+<include file="Public:bottom" />
